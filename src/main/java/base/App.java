@@ -29,6 +29,50 @@ public class App
 
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        App myApp = new App();
+
+        Integer num1 = myApp.getnum1();
+        Integer num2 = myApp.getnum2();
+        Integer num3 = myApp.getnum3();
+        Integer largest = myApp.findlargest(num1, num2, num3);
+
+        myApp.output(largest);
+    }
+
+    public Integer findlargest(Integer num1, Integer num2, Integer num3)
+    {
+        Integer max = num1;
+        if(num2 > max)
+            max = num2;
+        if(num3 > max)
+            max = num3;
+
+        return max;
+    }
+
+    public Integer getnum1()
+    {
+        System.out.print("Enter the first number: ");
+        Integer num = in.nextInt();
+        return num;
+    }
+
+    public Integer getnum2()
+    {
+        System.out.print("Enter the second number: ");
+        Integer num = in.nextInt();
+        return num;
+    }
+
+    public Integer getnum3()
+    {
+        System.out.print("Enter the third number: ");
+        Integer num = in.nextInt();
+        return num;
+    }
+
+    public void output(Integer largest)
+    {
+        System.out.println("The largest number is " + largest + ".");
     }
 }
